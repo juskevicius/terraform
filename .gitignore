@@ -2,4 +2,5 @@
 
 **/*.plan
 **/*.tfstate*
+**/*.tfvars
 **/.terraform.lock.hcl

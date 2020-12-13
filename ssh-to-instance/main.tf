@@ -1,7 +1,3 @@
-variable "prod_public_key_name" {
-  type = string
-}
-
 provider "aws" {
   profile = "terraform"
   region  = "eu-north-1"
@@ -84,7 +80,7 @@ resource "aws_security_group" "prod_sg" {
 resource "aws_instance" "prod_instance" {
   ami           = "ami-01450210d4ebb3bab"
   instance_type = "t3.micro"
-  key_name      = var.prod_public_key_name
+  key_name      = var.ubuntu_instance_key_name
 
   vpc_security_group_ids = [aws_security_group.prod_sg.id]
   subnet_id              = aws_subnet.prod_subnet.id
